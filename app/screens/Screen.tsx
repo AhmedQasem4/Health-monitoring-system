@@ -1,5 +1,6 @@
 import { StatusBar, StyleSheet, View, ViewStyle } from "react-native";
 import React, { ReactNode } from "react";
+import colors from "../config/colors";
 
 interface Props {
   children: ReactNode;
