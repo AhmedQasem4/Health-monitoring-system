@@ -13,7 +13,7 @@ import colors from "../config/colors";
 import FormHeader from "../components/FormHeader";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/defaultStyles";
-const LoginScreen = () => {
+const RegistrationScreen = () => {
   return (
     <Screen>
       <View>
@@ -27,10 +27,23 @@ const LoginScreen = () => {
       <View style={styles.loginForm}>
         <FormHeader />
         <TextInput placeholder="Username" style={styles.formField} />
+        <TextInput
+          placeholder="Email"
+          style={styles.formField}
+          keyboardType="email-address"
+        />
         <View style={styles.formField}>
           <TextInput
             secureTextEntry
             placeholder="Password"
+            style={defaultStyles.text}
+          />
+          <MaterialCommunityIcons name="eye-off" size={30} />
+        </View>
+        <View style={styles.formField}>
+          <TextInput
+            secureTextEntry
+            placeholder="Confirm Password"
             style={defaultStyles.text}
           />
           <MaterialCommunityIcons name="eye-off" size={30} />
@@ -41,27 +54,29 @@ const LoginScreen = () => {
             alignSelf: "flex-end",
             marginRight: 10,
             fontSize: 15,
-            fontWeight: 'bold',
+            fontWeight: "bold",
           }}
         >
           Forgot Password?
         </Text>
-        <View style={{justifyContent: 'center', alignItems: 'center', gap: 10}}>
+        <View
+          style={{ justifyContent: "center", alignItems: "center", gap: 10 }}
+        >
           <TouchableOpacity style={styles.loginButton}>
             <Text style={styles.LoginButtonText}>Log In</Text>
           </TouchableOpacity>
           <Text style={{ fontSize: 16 }}>
-            Don't have an account?{" "}
+            You already have an account?{" "}
             <Text
               style={{
                 color: colors.textBlue,
                 fontSize: 16,
                 textDecorationLine: "underline",
-                fontWeight: 'bold',
+                fontWeight: "bold",
                 textTransform: 'uppercase',
               }}
             >
-              Sign Up
+              Login
             </Text>
           </Text>
         </View>
@@ -86,7 +101,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
     flex: 1,
     padding: 10,
-    gap: 30,
+    gap: 10,
   },
   formField: {
     flexDirection: "row",
@@ -103,15 +118,15 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     padding: 20,
     borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     width: 160,
   },
   LoginButtonText: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: colors.white,
   },
 });
 
-export default LoginScreen;
+export default RegistrationScreen;

@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 import LoginScreen from './app/screens/LoginScreen';
+import RegistrationScreen from './app/screens/RegistrationScreen';
 
 export default function App() {
   return (
-   <LoginScreen />
+   <RegistrationScreen />
   );
 }
 
