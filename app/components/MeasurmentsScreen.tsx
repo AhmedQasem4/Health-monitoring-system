@@ -1,4 +1,4 @@
-import { StyleSheet, Image, View, Text } from "react-native";
+import { StyleSheet, Image, View, Text, ImageStyle, ViewStyle } from "react-native";
 import React from "react";
 import Screen from "../screens/Screen";
 import colors from "../config/colors";
@@ -6,14 +6,15 @@ import colors from "../config/colors";
 interface Props{
     imageUri: any,
     text: string,
-    value: string
+    value: string,
+    style?: ViewStyle | ViewStyle[],
 }
 
-const MeasurmentsScreen = ({imageUri, text, value}: Props) => {
+const MeasurmentsScreen = ({imageUri,style, text, value}: Props) => {
   return (
     <Screen>
       <Image source={require("../assets/logo.png")} style={styles.logo} />
-      <View style={styles.container}>
+      <View style={[styles.container, style]}>
         <Image source={imageUri} />
         <Text style={styles.text}>{text}</Text>
         <Image source={require('../assets/thinRing.png')} />
