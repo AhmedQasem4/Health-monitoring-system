@@ -24,7 +24,7 @@ const RegistrationScreen = () => {
         />
         <Image style={styles.logo} source={require("../assets/logo.png")} />
       </View>
-      <View style={styles.loginForm}>
+      <View style={styles.signupForm}>
         <FormHeader />
         <TextInput placeholder="Username" style={styles.formField} />
         <TextInput
@@ -48,22 +48,11 @@ const RegistrationScreen = () => {
           />
           <MaterialCommunityIcons name="eye-off" size={30} />
         </View>
-        <Text
-          style={{
-            color: colors.textGreen,
-            alignSelf: "flex-end",
-            marginRight: 10,
-            fontSize: 15,
-            fontWeight: "bold",
-          }}
-        >
-          Forgot Password?
-        </Text>
         <View
           style={{ justifyContent: "center", alignItems: "center", gap: 10 }}
         >
-          <TouchableOpacity style={styles.loginButton}>
-            <Text style={styles.LoginButtonText}>Log In</Text>
+          <TouchableOpacity style={styles.signupButton}>
+            <Text style={styles.singupButtonText}>Sign up</Text>
           </TouchableOpacity>
           <Text style={{ fontSize: 16 }}>
             You already have an account?{" "}
@@ -97,7 +86,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  loginForm: {
+  signupForm: {
     backgroundColor: colors.light,
     flex: 1,
     padding: 10,
@@ -114,15 +103,16 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: colors.lightGray,
   },
-  loginButton: {
+  signupButton: {
     backgroundColor: colors.primary,
     padding: 20,
     borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
     width: 160,
+    marginTop: 10,
   },
-  LoginButtonText: {
+  singupButtonText: {
     fontSize: 20,
     fontWeight: "bold",
     color: colors.white,
