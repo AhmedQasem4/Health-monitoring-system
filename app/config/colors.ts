@@ -7,4 +7,5 @@ export default {
   textBlue: "#3D85D9",
   white: "#fff",
   black: "#000",
+  border: '#d9d9d9',
 };
