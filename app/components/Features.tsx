@@ -19,6 +19,7 @@ const Features = ({ heading,children }: Props) => {
 const styles = StyleSheet.create({
   container: {
     padding: 5,
+    // backgroundColor: 'red',
   },
   childrenContainer: {
     flexDirection: "row",
