@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Screen from "./Screen";
+import { StyleSheet } from "react-native";
 import HomeScreenHeader from "../components/HomeScreenHeader";
+import MeasurmentsFeatures from "../components/MeasurmentsFeatures";
 import MedicineAlarm from "../components/MedicineAlarm";
+import Screen from "./Screen";
 
 const HomeScreen = () => {
   return (
@@ -12,6 +13,7 @@ const HomeScreen = () => {
         userName="Ahmed"
       />
       <MedicineAlarm />
+      <MeasurmentsFeatures />
     </Screen>
   );
 };
