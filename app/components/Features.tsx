@@ -18,8 +18,7 @@ const Features = ({ heading,children }: Props) => {
 };
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginTop: 10,
+    padding: 5,
   },
   childrenContainer: {
     flexDirection: "row",

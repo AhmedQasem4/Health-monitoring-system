@@ -4,6 +4,7 @@ import HomeScreenHeader from "../components/HomeScreenHeader";
 import MeasurmentsFeatures from "../components/MeasurmentsFeatures";
 import MedicineAlarm from "../components/MedicineAlarm";
 import Screen from "./Screen";
+import ActivitiesFeatures from "../components/ActivitiesFeatures";
 
 const HomeScreen = () => {
   return (
@@ -14,6 +15,7 @@ const HomeScreen = () => {
       />
       <MedicineAlarm />
       <MeasurmentsFeatures />
+      <ActivitiesFeatures />
     </Screen>
   );
 };

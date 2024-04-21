@@ -1,10 +1,10 @@
 import React from "react";
 import {
-    Image,
-    ImageSourcePropType,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
 } from "react-native";
 import colors from "../config/colors";
 
@@ -19,7 +19,7 @@ const Card = ({ iconUri, width, label }: Props) => {
     <TouchableOpacity style={[styles.card, { width, height: width }]}>
       <Image
         source={iconUri}
-        style={{ width: 40, height: 40, marginBottom: 10 }}
+        style={{ width: 0.5 * width, height: 0.5 * width, marginBottom: 10 }}
       />
       <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
