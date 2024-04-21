@@ -4,10 +4,11 @@ import TemperatureScreen from './app/screens/TemperatureScreen';
 import LoadingScreen from './app/screens/LoadingScreen';
 import OxygenScreen from './app/screens/OxygenScreen';
 import HomeScreen from './app/screens/HomeScreen';
+import EditProfileScreen from './app/screens/EditProfileScreen';
 
 export default function App() {
   return (
-   <HomeScreen />
+   <EditProfileScreen />
   );
 }
 
