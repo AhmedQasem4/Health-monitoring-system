@@ -10,4 +10,5 @@ export default {
   border: '#d9d9d9',
   danger: '#ff0505',
   card: "#F4FAF8",
+  alarm: '#F0F0F0',
 };
