@@ -1,7 +1,7 @@
 import {  StyleSheet, Text, View , ColorValue} from "react-native";
 import React from "react";
 import colors from "../config/colors";
-import AppText from "./AppText";
+
 
 const FormHeader = () => {
   return (
