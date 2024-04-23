@@ -2,6 +2,7 @@ import { StyleSheet, Image, View, Text, ImageStyle, ViewStyle } from "react-nati
 import React from "react";
 import Screen from "../screens/Screen";
 import colors from "../config/colors";
+import CommonHeader from "./CommonHeader";
 
 interface Props{
     imageUri: any,
@@ -13,7 +14,7 @@ interface Props{
 const MeasurmentsScreen = ({imageUri,style, text, value}: Props) => {
   return (
     <Screen>
-      <Image source={require("../assets/logo.png")} style={styles.logo} />
+      <CommonHeader />
       <View style={[styles.container, style]}>
         <Image source={imageUri} />
         <Text style={styles.text}>{text}</Text>
@@ -26,11 +27,6 @@ const MeasurmentsScreen = ({imageUri,style, text, value}: Props) => {
 };
 
 const styles = StyleSheet.create({
-  logo: {
-    width: 100,
-    height: 100,
-    alignSelf: "flex-end",
-  },
   container:{
     justifyContent: 'center',
     alignItems: 'center',

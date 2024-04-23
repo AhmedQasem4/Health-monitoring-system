@@ -1,6 +1,8 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import colors from "../config/colors";
+import { useNavigation } from "@react-navigation/native";
+import { HomeScreenNavigateProps } from "../../type";
 
 interface Props {
   userImage: any;
@@ -8,13 +10,16 @@ interface Props {
 }
 
 const HomeScreenHeader = ({ userImage, userName }: Props) => {
+  const navigation = useNavigation<HomeScreenNavigateProps>();
   return (
     <View style={styles.container}>
       <View style={styles.userContainer}>
-        <Image
-          source={userImage}
-          style={{ marginRight: 10, width: 40, height: 40 }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("EditProfile")}>
+          <Image
+            source={userImage}
+            style={{ marginRight: 10, width: 40, height: 40 }}
+          />
+        </TouchableOpacity>
         <View>
           <Text style={styles.userName}>Hi, {userName}</Text>
           <Text style={styles.welceomMessage}>How is your health today?</Text>

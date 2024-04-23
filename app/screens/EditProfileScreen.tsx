@@ -2,10 +2,12 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Screen from "./Screen";
 import AppTextInput from "../components/AppTextInput";
+import CommonHeader from "../components/CommonHeader";
 
 const EditProfileScreen = () => {
   return (
     <Screen style={{ padding: 10, justifyContent: "center" }}>
+      <CommonHeader />
       <View style={styles.editContainer}>
         <Text style={styles.text}>Edit Profile</Text>
         <Image source={require("../assets/editIcon.png")} />
@@ -43,6 +45,6 @@ const styles = StyleSheet.create({
   },
   userImage: {
     marginBottom: 20,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
 });

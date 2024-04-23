@@ -13,7 +13,10 @@ import colors from "../config/colors";
 import FormHeader from "../components/FormHeader";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/defaultStyles";
+import { useNavigation } from "@react-navigation/native";
+import { HomeScreenNavigateProps } from "../../type";
 const RegistrationScreen = () => {
+  const navigation = useNavigation<HomeScreenNavigateProps>();
   return (
     <Screen>
       <View>
@@ -56,17 +59,19 @@ const RegistrationScreen = () => {
           </TouchableOpacity>
           <Text style={{ fontSize: 16 }}>
             You already have an account?{" "}
-            <Text
-              style={{
-                color: colors.textBlue,
-                fontSize: 16,
-                textDecorationLine: "underline",
-                fontWeight: "bold",
-                textTransform: 'uppercase',
-              }}
-            >
-              Login
-            </Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Text
+                style={{
+                  color: colors.textBlue,
+                  fontSize: 16,
+                  textDecorationLine: "underline",
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                }}
+              >
+                Login
+              </Text>
+            </TouchableOpacity>
           </Text>
         </View>
       </View>

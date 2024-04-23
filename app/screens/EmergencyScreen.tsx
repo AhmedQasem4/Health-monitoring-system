@@ -2,10 +2,12 @@ import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import React from "react";
 import Screen from "./Screen";
 import colors from "../config/colors";
+import CommonHeader from "../components/CommonHeader";
 
 const EmergencyScreen = () => {
   return (
     <Screen style={styles.screen}>
+      <CommonHeader />
       <View style={styles.container}>
         <Text style={styles.heading}>Emergency</Text>
         <TouchableOpacity>

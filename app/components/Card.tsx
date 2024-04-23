@@ -12,11 +12,12 @@ interface Props {
   iconUri: ImageSourcePropType;
   width: number;
   label: string;
+  onPress: ()=> void;
 }
 
-const Card = ({ iconUri, width, label }: Props) => {
+const Card = ({ iconUri, width, label, onPress }: Props) => {
   return (
-    <TouchableOpacity style={[styles.card, { width, height: width }]}>
+    <TouchableOpacity onPress={onPress} style={[styles.card, { width, height: width }]}>
       <Image
         source={iconUri}
         style={{ width: 0.5 * width, height: 0.5 * width, marginBottom: 10 }}
