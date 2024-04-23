@@ -1,11 +1,15 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, ImageURISource, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import colors from '../config/colors'
 import { useNavigation } from '@react-navigation/native'
 import { HomeScreenNavigateProps } from '../../type'
 
-const CommonHeader = () => {
+interface Props{
+  logo: boolean,
+}
+
+const CommonHeader = ({logo}:Props) => {
     const navigation = useNavigation<HomeScreenNavigateProps>();
   return (
     <View style={styles.container}>
@@ -13,7 +17,7 @@ const CommonHeader = () => {
         <MaterialCommunityIcons name='arrow-left' size={30} color={colors.lightGreen}/>
         <Text style={styles.backText}>Back</Text>
       </TouchableOpacity>
-      <Image source={require("../assets/logo.png")} style={styles.logo} />
+      {logo && <Image source={require("../assets/logo.png")} style={styles.logo} />}
     </View>
   )
 }

@@ -7,7 +7,7 @@ import CommonHeader from "../components/CommonHeader";
 const EmergencyScreen = () => {
   return (
     <Screen style={styles.screen}>
-      <CommonHeader />
+      <CommonHeader logo={true}/>
       <View style={styles.container}>
         <Text style={styles.heading}>Emergency</Text>
         <TouchableOpacity>

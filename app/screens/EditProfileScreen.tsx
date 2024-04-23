@@ -7,7 +7,7 @@ import CommonHeader from "../components/CommonHeader";
 const EditProfileScreen = () => {
   return (
     <Screen style={{ padding: 10, justifyContent: "center" }}>
-      <CommonHeader />
+      <CommonHeader logo={false}/>
       <View style={styles.editContainer}>
         <Text style={styles.text}>Edit Profile</Text>
         <Image source={require("../assets/editIcon.png")} />

@@ -14,7 +14,7 @@ interface Props{
 const MeasurmentsScreen = ({imageUri,style, text, value}: Props) => {
   return (
     <Screen>
-      <CommonHeader />
+      <CommonHeader logo={true}/>
       <View style={[styles.container, style]}>
         <Image source={imageUri} />
         <Text style={styles.text}>{text}</Text>

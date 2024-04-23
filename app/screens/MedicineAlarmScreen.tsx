@@ -10,11 +10,13 @@ import React from "react";
 import Screen from "./Screen";
 import colors from "../config/colors";
 import Alarm from "../components/Alarm";
+import CommonHeader from "../components/CommonHeader";
 
 const MedicineAlarmScreen = () => {
   return (
     <ScrollView>
       <Screen style={{ padding: 10, marginVertical: 20, }}>
+        <CommonHeader logo={false}/>
         <View style={styles.headerContainer}>
           <Text style={styles.heading}>Medicine Alarm</Text>
           <TouchableWithoutFeedback onPress={() => console.log("added")}>
