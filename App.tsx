@@ -14,6 +14,7 @@ import ForgetPasswordScreen from "./app/screens/ForgetPasswordScreen";
 import EmergencyScreen from "./app/screens/EmergencyScreen";
 import { HomeScreenNavigateProps } from "./type";
 import { useEffect, useState } from "react";
+import NavigationBar from "./app/components/NavigationBar";
 
 const Stack = createNativeStackNavigator<HomeScreenNavigateProps>();
 

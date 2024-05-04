@@ -6,6 +6,7 @@ import MedicineAlarm from "../components/MedicineAlarm";
 import Screen from "./Screen";
 import ActivitiesFeatures from "../components/ActivitiesFeatures";
 import EmergencyFeature from "../components/EmergencyFeature";
+import NavigationBar from "../components/NavigationBar";
 
 const HomeScreen = () => {
   return (
