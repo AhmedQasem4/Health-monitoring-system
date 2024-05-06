@@ -1,7 +1,5 @@
 import { StatusBar, StyleSheet, View, ViewStyle } from "react-native";
-import React, { ReactNode, useState } from "react";
-import colors from "../config/colors";
-import NavigationBar from "../components/NavigationBar";
+import React, { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;

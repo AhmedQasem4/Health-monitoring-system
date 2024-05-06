@@ -1,9 +1,6 @@
 import {
   StyleSheet,
   Image,
-  TouchableWithoutFeedback,
-  View,
-  TouchableHighlight,
   TouchableOpacity,
 } from "react-native";
 import React from "react";
@@ -24,4 +21,3 @@ const MedicineAlarm = () => {
 
 export default MedicineAlarm;
 
-const styles = StyleSheet.create({});

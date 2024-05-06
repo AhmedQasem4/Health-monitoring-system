@@ -36,7 +36,7 @@ const Alarm = () => {
           <MaterialCommunityIcons
             name="clock"
             size={40}
-            color={isActive ? colors.black : colors.lightGray}
+            color={isActive ? "#b4e2a4" : colors.lightGray}
           />
           <Text
             style={[

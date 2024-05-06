@@ -5,20 +5,20 @@ import Card from "./Card";
 import { useNavigation } from "@react-navigation/native";
 import { HomeScreenNavigateProps } from "../../type";
 const ActivitiesFeatures = () => {
-  const navigation = useNavigation<HomeScreenNavigateProps>();
+  const navigation = useNavigation<HomeScreenNavigateProps>(); 
   return (
     <Features heading="Activities">
       <View style={styles.container}>
         <Card
           iconUri={require("../assets/medicineIcon.png")}
           label="search medicine"
-          width={130}
+          width={140}
           onPress={() => console.log("not implemented yet")}
         />
         <Card
           iconUri={require("../assets/reportsIcon.png")}
           label="Reports"
-          width={130}
+          width={140}
           onPress={() => console.log("not implemented yet")}
         />
       </View>

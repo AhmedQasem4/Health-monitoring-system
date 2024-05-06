@@ -11,19 +11,19 @@ const MeasurmentsFeatures = () => {
       <Card
         label="Heart rate"
         iconUri={require("../assets/heartIcon.png")}
-        width={100}
+        width={105}
         onPress={()=>navigation.navigate('HeartRate')}
       />
       <Card
         label="temperature"
         iconUri={require("../assets/temperatureIcon.png")}
-        width={104}
+        width={106}
         onPress={()=>navigation.navigate('Temperature')}
       />
       <Card
         label="oxygen"
         iconUri={require("../assets/oxygenIcon.png")}
-        width={100}
+        width={106}
         onPress={()=> navigation.navigate('Oxygen')}
       />
     </Features>

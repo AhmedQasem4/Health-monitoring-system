@@ -1,4 +1,4 @@
-import { StyleSheet, Image, View, Text, ImageStyle, ViewStyle } from "react-native";
+import { StyleSheet, Image, View, Text, ViewStyle } from "react-native";
 import React from "react";
 import Screen from "../screens/Screen";
 import colors from "../config/colors";
