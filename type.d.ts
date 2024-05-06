@@ -11,6 +11,7 @@ export type HomeStackNavigatorParmList = {
   MedicineAlarm: undefined;
   EditProfile: undefined;
   Emergency: undefined;
+  BluetoothConnection: undefined;
 };
 
 export type HomeScreenNavigateProps = NativeStackScreenProps<
@@ -24,5 +25,6 @@ export type HomeScreenNavigateProps = NativeStackScreenProps<
   Oxygen,
   MedicineAlarm,
   EditProfile,
-  Emergency
+  Emergency,
+  BluetoothConnection
 >;

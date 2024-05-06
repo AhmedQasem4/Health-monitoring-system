@@ -18,8 +18,9 @@ const Screen = ({ children, style }: Props) => {
 
 const styles = StyleSheet.create({
   screen: {
-    // paddingTop: StatusBar.currentHeight,
+    paddingTop: StatusBar.currentHeight,
     flex: 1,
+    // backgroundColor: 'red',
   },
 });
 

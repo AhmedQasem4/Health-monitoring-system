@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import { HomeScreenNavigateProps } from '../../type'
 
 interface Props{
-  logo: boolean,
+  logo?: boolean,
 }
 
 const CommonHeader = ({logo}:Props) => {

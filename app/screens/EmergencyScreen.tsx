@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   heading: {
-    color: colors.danger,
+    color: "#EA596C",
     fontSize: 30,
     fontWeight: "bold",
   },

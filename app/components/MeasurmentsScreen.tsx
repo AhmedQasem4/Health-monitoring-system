@@ -7,7 +7,7 @@ import CommonHeader from "./CommonHeader";
 interface Props{
     imageUri: any,
     text: string,
-    value: string,
+    value: number,
     style?: ViewStyle | ViewStyle[],
 }
 

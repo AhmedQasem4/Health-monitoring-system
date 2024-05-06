@@ -7,6 +7,7 @@ import Screen from "./Screen";
 import ActivitiesFeatures from "../components/ActivitiesFeatures";
 import EmergencyFeature from "../components/EmergencyFeature";
 import NavigationBar from "../components/NavigationBar";
+import BluetoothConnection from "../components/BluetoothConnection";
 
 const HomeScreen = () => {
   return (
@@ -15,6 +16,7 @@ const HomeScreen = () => {
         userImage={require("../assets/userImage.png")}
         userName="Ahmed"
       />
+      <BluetoothConnection />
       <MedicineAlarm />
       <MeasurmentsFeatures />
       <ActivitiesFeatures />
