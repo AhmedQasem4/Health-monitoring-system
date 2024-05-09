@@ -13,6 +13,7 @@ const OxygenScreen = () => {
         imageUri={require("../assets/oxygen.png")}
         text='Measuring Oxygen Saturation in blood...'
         value={oxygenSat}
+        valueLabeL={"%"}
     />
   )
 }

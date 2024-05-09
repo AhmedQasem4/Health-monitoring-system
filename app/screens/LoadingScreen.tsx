@@ -5,7 +5,7 @@ import Screen from "./Screen";
 const LoadingScreen = () => {
   return (
     <Screen style={styles.container}>
-      <Image source={require("../assets/logo.png")} />
+      <Image style={{width: 150, height: 150 }} source={require("../assets/logo.png")} />
       <Image
         resizeMode="contain"
         style={styles.loadingLogo}

@@ -8,10 +8,11 @@ interface Props{
     imageUri: any,
     text: string,
     value: number,
+    valueLabeL?: string,
     style?: ViewStyle | ViewStyle[],
 }
 
-const MeasurmentsScreen = ({imageUri,style, text, value}: Props) => {
+const MeasurmentsScreen = ({imageUri,style, text, value, valueLabeL}: Props) => {
   return (
     <Screen>
       <CommonHeader logo={true}/>
@@ -20,7 +21,7 @@ const MeasurmentsScreen = ({imageUri,style, text, value}: Props) => {
         <Text style={styles.text}>{text}</Text>
         <Image source={require('../assets/thinRing.png')} />
         <Image style={styles.thickRing} source={require('../assets/thickRing.png')} />
-        <Text style={styles.value}>{value}</Text>
+        <Text style={styles.value}>{`${value} ${valueLabeL}`}</Text>
       </View>
     </Screen>
   );

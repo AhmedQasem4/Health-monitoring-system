@@ -11,6 +11,7 @@ const TemperatureScreen = () => {
       imageUri={require('../assets/temperature.png')}
       text="Measuring Temperature..."
       value={temperature}
+      valueLabeL={"°C"}
     />
   );
 };

@@ -11,6 +11,7 @@ const HeartRateScreen = () => {
       imageUri={require('../assets/human.png')}
       text="Measuring Heart Rate..."
       value={heartRate}
+      valueLabeL="bpm"
     />
   );
 };
