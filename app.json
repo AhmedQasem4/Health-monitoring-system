@@ -3,6 +3,12 @@
     "name": "HMSMobileApp",
     "slug": "HMSMobileApp",
     "version": "1.0.0",
+    "notification": {
+      "icon": "./app/assets/logo.png",
+      "color": "#000000",
+      "androidMode": "default",
+      "androidCollapsedTitle": "#{unread_notifications} new messages"
+    },
     "orientation": "portrait",
     "icon": "./app/assets/logo.png",
     "userInterfaceStyle": "light",

@@ -11,6 +11,7 @@ import Screen from "./Screen";
 import colors from "../config/colors";
 import Alarm from "../components/Alarm";
 import CommonHeader from "../components/CommonHeader";
+import AlarmFeature from "./AlarmFeature";
 
 const MedicineAlarmScreen = () => {
   return (
@@ -23,14 +24,7 @@ const MedicineAlarmScreen = () => {
             <Text style={styles.addAlarmButton}>Add New</Text>
           </TouchableWithoutFeedback>
         </View>
-        <Alarm />
-        <Alarm />
-        <Alarm />
-        <Alarm />
-        <Alarm />
-        <Alarm />
-        <Alarm />
-        <Alarm />
+        <AlarmFeature />
       </Screen>
     </ScrollView>
   );
