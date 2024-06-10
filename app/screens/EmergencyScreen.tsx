@@ -1,16 +1,33 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View,Alert, Image } from "react-native";
 import React from "react";
 import Screen from "./Screen";
 import colors from "../config/colors";
 import CommonHeader from "../components/CommonHeader";
-
+import * as Linking from 'expo-linking';
 const EmergencyScreen = () => {
+  const handleSOSPress = () => {
+    Alert.alert(
+      "Emergency Call",
+      "Are you sure you want to call emergency services?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Call",
+          onPress: () => Linking.openURL('tel:123')
+        }
+      ],
+      { cancelable: false }
+    );
+  };
   return (
     <Screen style={styles.screen}>
       <CommonHeader logo={true}/>
       <View style={styles.container}>
         <Text style={styles.heading}>Emergency</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleSOSPress}>
           <View style={styles.sosContainer}>
             <Image
               style={{ width: 190, height: 190, position: "absolute" }}

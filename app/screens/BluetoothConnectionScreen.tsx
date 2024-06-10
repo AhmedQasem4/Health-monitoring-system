@@ -14,6 +14,7 @@ const BluetoothConnectionScreen = () => {
     allDevices,
     connectToDevice,
     disconnectFromDevice,
+    connectedDevice,
   } = useBluetoothScreens();
   const [scan, setScan] = useState(false);
   const scanForDevices = async () => {
@@ -45,7 +46,7 @@ const BluetoothConnectionScreen = () => {
         <CommonHeader />
         <TouchableOpacity
           onPress={() => onScan()}
-          style={styles.scanButton}
+          style={[styles.scanButton, { opacity: scan ? 0.6 : 1 }]}
           disabled={scan === true}
         >
           <Text style={styles.scanText}>{scan ? "Scanning..." : "Scan"}</Text>
@@ -56,13 +57,22 @@ const BluetoothConnectionScreen = () => {
           <TouchableOpacity
             onPress={() => onConnect(device)}
             key={device.id}
-            style={styles.deviceItem}
+            style={[
+              styles.deviceItem,
+              {
+                backgroundColor:
+                  connectedDevice?.id === device.id
+                    ? colors.lightGreen
+                    : "tomato",
+              },
+            ]}
           >
             <Text style={styles.deviceName}>{device.name}</Text>
           </TouchableOpacity>
         ))}
         <TouchableOpacity
-          style={styles.disconnectButton}
+          disabled={!connectedDevice}
+          style={[styles.disconnectButton, { opacity: connectedDevice ? 1 : 0.6 }]}
           onPress={() => onDisconnect()}
         >
           <Text style={styles.disconnectText}>Disconnect</Text>
@@ -101,7 +111,6 @@ const styles = StyleSheet.create({
   deviceItem: {
     width: "100%",
     padding: 10,
-    backgroundColor: "tomato",
   },
   deviceName: {
     fontSize: 20,

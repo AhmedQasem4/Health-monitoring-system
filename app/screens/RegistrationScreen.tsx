@@ -54,7 +54,7 @@ const RegistrationScreen = () => {
         <View
           style={{ justifyContent: "center", alignItems: "center", gap: 10 }}
         >
-          <TouchableOpacity style={styles.signupButton}>
+          <TouchableOpacity onPress={()=> navigation.navigate("Login")} style={styles.signupButton}>
             <Text style={styles.singupButtonText}>Sign up</Text>
           </TouchableOpacity>
           <Text style={{ fontSize: 16 }}>
