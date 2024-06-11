@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Screen from "./Screen";
 import colors from "../config/colors";
 import FormHeader from "../components/FormHeader";
@@ -15,8 +15,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/defaultStyles";
 import { useNavigation } from "@react-navigation/native";
 import { HomeScreenNavigateProps } from "../../type";
+import { useAuth } from "../context/AuthContext";
 const LoginScreen = () => {
   const navigation = useNavigation<HomeScreenNavigateProps>();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signIn, user } = useAuth();
+  const [secureText, setSecureText] = useState(true);
   return (
     <Screen>
       <View>
@@ -29,16 +34,31 @@ const LoginScreen = () => {
       </View>
       <View style={styles.loginForm}>
         <FormHeader />
-        <TextInput placeholder="Username" style={styles.formField} />
+        <TextInput
+          placeholder="Email"
+          style={styles.formField}
+          value={email}
+          onChangeText={setEmail}
+        />
         <View style={styles.formField}>
           <TextInput
-            secureTextEntry
+            secureTextEntry={secureText}
             placeholder="Password"
             style={defaultStyles.text}
+            value={password}
+            onChangeText={setPassword}
           />
-          <MaterialCommunityIcons name="eye-off" size={30} />
+          <MaterialCommunityIcons
+            onPress={() => setSecureText(!secureText)}
+            name="eye-off"
+            size={30}
+          />
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate("ForgetPassword")}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("ForgetPassword");
+          }}
+        >
           <Text
             style={{
               color: colors.textGreen,
@@ -56,7 +76,10 @@ const LoginScreen = () => {
         >
           <TouchableOpacity
             style={styles.loginButton}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => {
+              signIn(email, password);
+              navigation.navigate("Home");
+            }}
           >
             <Text style={styles.LoginButtonText}>Log In</Text>
           </TouchableOpacity>

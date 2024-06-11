@@ -8,8 +8,14 @@ import ActivitiesFeatures from "../components/ActivitiesFeatures";
 import EmergencyFeature from "../components/EmergencyFeature";
 import NavigationBar from "../components/NavigationBar";
 import BluetoothConnection from "../components/BluetoothConnection";
+import { useAuth } from "../context/AuthContext";
+import LoginScreen from "./LoginScreen";
 
 const HomeScreen = () => {
+  const { user } = useAuth();
+  if(!user) return (
+    <LoginScreen />
+  )
   return (
     <Screen style={styles.screen}>
       <HomeScreenHeader

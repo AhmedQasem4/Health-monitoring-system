@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 import React from "react";
 import Features from "./Features";
 import Card from "./Card";
@@ -13,13 +13,13 @@ const ActivitiesFeatures = () => {
           iconUri={require("../assets/medicineIcon.png")}
           label="search medicine"
           width={140}
-          onPress={() => console.log("not implemented yet")}
+          onPress={() => Alert.alert("Comming Soon...")}
         />
         <Card
           iconUri={require("../assets/reportsIcon.png")}
           label="Reports"
           width={140}
-          onPress={() => console.log("not implemented yet")}
+          onPress={() => Alert.alert("Comming Soon...")}
         />
       </View>
     </Features>

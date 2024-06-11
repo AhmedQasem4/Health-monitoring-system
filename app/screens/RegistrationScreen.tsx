@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Screen from "./Screen";
 import colors from "../config/colors";
 import FormHeader from "../components/FormHeader";
@@ -15,8 +15,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/defaultStyles";
 import { useNavigation } from "@react-navigation/native";
 import { HomeScreenNavigateProps } from "../../type";
+import { useAuth } from "../context/AuthContext";
 const RegistrationScreen = () => {
   const navigation = useNavigation<HomeScreenNavigateProps>();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [secureText, setSecureText] = useState(true);
+  const { signUp } = useAuth();
   return (
     <Screen>
       <View>
@@ -34,27 +39,37 @@ const RegistrationScreen = () => {
           placeholder="Email"
           style={styles.formField}
           keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
         />
         <View style={styles.formField}>
           <TextInput
-            secureTextEntry
+            secureTextEntry={secureText}
             placeholder="Password"
             style={defaultStyles.text}
+            value={password}
+            onChangeText={setPassword}
           />
-          <MaterialCommunityIcons name="eye-off" size={30} />
+          <MaterialCommunityIcons onPress={()=> setSecureText(!secureText)} name="eye-off" size={30} />
         </View>
-        <View style={styles.formField}>
+        {/* <View style={styles.formField}>
           <TextInput
             secureTextEntry
             placeholder="Confirm Password"
             style={defaultStyles.text}
           />
           <MaterialCommunityIcons name="eye-off" size={30} />
-        </View>
+        </View> */}
         <View
           style={{ justifyContent: "center", alignItems: "center", gap: 10 }}
         >
-          <TouchableOpacity onPress={()=> navigation.navigate("Login")} style={styles.signupButton}>
+          <TouchableOpacity
+            onPress={() => {
+              signUp({ email, password });
+              navigation.navigate("Login");
+            }}
+            style={styles.signupButton}
+          >
             <Text style={styles.singupButtonText}>Sign up</Text>
           </TouchableOpacity>
           <Text style={{ fontSize: 16 }}>

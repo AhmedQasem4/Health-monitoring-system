@@ -1,11 +1,15 @@
-import { Image, StyleSheet, Switch, Text, View } from "react-native";
+import {  Button, StyleSheet, Switch, Text, TouchableHighlight, View } from "react-native";
 import React, { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
-const Alarm = () => {
+interface Props{
+  date: Date;
+  onPress: () => void;
+}
+
+const Alarm = ({date, onPress}:Props) => {
   let medicineTitle = "Panadol";
-  let date = "Today at 11:30am";
   const [isActive, setIsActive] = useState(true);
   const toggleSwitch = () => {
     !isActive;
@@ -44,7 +48,7 @@ const Alarm = () => {
               { color: isActive ? colors.white : colors.lightGray },
             ]}
           >
-            {date.toString()}
+            {date.toLocaleTimeString()}
           </Text>
         </View>
       </View>
@@ -56,6 +60,9 @@ const Alarm = () => {
           onValueChange={() => setIsActive(!isActive)}
           value={isActive}
         />
+         <TouchableHighlight style={{borderRadius: 10,backgroundColor: colors.danger, marginTop: 30, padding: 5,}} onPress={onPress}>
+          <Text style={{color: colors.white}}>Delete</Text>
+         </TouchableHighlight>
       </View>
     </View>
   );

@@ -6,13 +6,14 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Screen from "./Screen";
 import colors from "../config/colors";
 import defaultStyles from "../config/defaultStyles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ForgetPasswordScreen = () => {
+  const [email, setEmail] = useState("");
   return (
     <Screen style={styles.screen}>
       <Image source={require("../assets/logo.png")} style={styles.logo} />
@@ -32,9 +33,14 @@ const ForgetPasswordScreen = () => {
             keyboardType="email-address"
             placeholder="Email"
             style={defaultStyles.text}
+            value={email}
+            onChangeText={setEmail}
           />
         </View>
-        <TouchableOpacity style={styles.sendCodeButton}>
+        <TouchableOpacity
+          disabled={!email}
+          style={[styles.sendCodeButton, { opacity: !email ? 0.5 : 1 }]}
+        >
           <Text style={styles.sendCodeButtonText}>Send Code</Text>
         </TouchableOpacity>
       </View>
@@ -89,7 +95,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: colors.lightGray,
     marginBottom: 30,
-    backgroundColor: '#EEEEEE',
+    backgroundColor: "#EEEEEE",
   },
   sendCodeButton: {
     backgroundColor: colors.lightGreen,
@@ -105,18 +111,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.white,
   },
-  notes:{
+  notes: {
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 15,
     padding: 20,
-    alignItems: 'center',
-  },    
-  notesText:{
+    alignItems: "center",
+  },
+  notesText: {
     color: colors.black,
     fontSize: 18,
-    fontWeight: '600',
-  }
+    fontWeight: "600",
+  },
 });
 
 export default ForgetPasswordScreen;
